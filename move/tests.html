@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+    #square {
+        border: 1px solid #888;
+        width: 100px;
+        height: 100px;
+        background-color: #fc1;
+        -webkit-transform: scale(0.1);
+    }
+    /* entire container, keeps perspective */
+
+    .flip-container {
+        perspective: 1000;
+    }
+    /* flip the pane when hovered */
+
+    .flip-container:hover .flipper,
+    .flip-container.hover .flipper {
+        transform: rotateY(90deg);
+    }
+
+    .flip-container,
+    .front,
+    .back {
+        width:183px;
+        height: 241px;
+    }
+    /* flip speed goes here */
+
+    .flipper {
+        transition: 1s;
+        transform-style: preserve-3d;
+
+        position: relative;
+    }
+    /* hide back of pane during swap */
+
+    .front,
+    .back {
+        backface-visibility: hidden;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    /* front pane, placed above back */
+
+    .front {
+        z-index: 2;
+    }
+    /* back, initially hidden pane */
+
+    .back {
+        transform: rotateY(90deg);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+            <div class="front">
+                <img src="./card.png" alt="">
+            </div>
+            <div class="back">
+                <img src="selectedcard.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="square"></div>
+    <button onclick="a()">aaaaa</button>
+    <script src="./zepto.min.js"></script>
+    <script src="./move.min.js"></script>
+    <script>
+
+    function a() {
+        $('.flipper').eq(0).css("-webkit-transform","scale(1.2,1.2)")
+        setTimeout(function () {
+            $('.flipper').eq(0).css("-webkit-transform","scale(1.2) rotateY(-90deg)")
+        },4000)
+        
+    }
+    </script>
+</body>
+
+</html>

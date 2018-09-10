@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view>
+    <!-- <web-view src="https://www.baidu.com"></web-view> -->
+    <button open-type="getUserInfo">获取授权按钮</button> 
+    <navigator url="/pages/reward/index?abc=123" hover-class="navigator-hover" class="a">
+      <view>
+        <text >点击跳转到B页面</text>
+      </view>
+    </navigator>
+    <button open-type='share'>分享按钮</button>
+</view>

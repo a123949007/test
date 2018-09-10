@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        background: #f00;
+    }
+
+    iframe {
+        width: 840px;
+        height: 200px;
+        position: absolute;
+        top: -0px;
+        left: -0px;
+        z-index: 2;
+        -moz-opacity: 0.0;
+        opacity: 0.0;
+        filter: alpha(opacity=0.0);
+    }
+    </style>
+</head>
+
+<body>
+    <iframe src="https://www.youmi.net" frameborder="0" allowTransparency="true"></iframe>
+    <script>
+        
+        var array = [1, 1, '1', '1'];
+
+        function unique(array) {
+            // res用来存储结果
+            debugger
+            var res = [];
+            for (var i = 0, arrayLen = array.length; i < arrayLen; i++) {
+                for (var j = 0, resLen = res.length; j < resLen; j++ ) {
+                    console.log(res)
+                    if (array[i] === res[j]) {
+                        break;
+                    }
+                }
+                // 如果array[i]是唯一的，那么执行完循环，j等于resLen
+                if (j === resLen) {
+                    res.push(array[i])
+                }
+            }
+            return res;
+        }
+
+        console.log(unique(array)); // [1, "1"]
+    </script>
+</body>
+
+</html>

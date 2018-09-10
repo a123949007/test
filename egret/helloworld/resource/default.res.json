@@ -1,0 +1,204 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,pic2_png,pic3_png,pic4_png,pic5_png,about-bg_png,about_png,close_png,bgListPage_jpg,btnOK_png,checked_png,checkNo_png,goods01_png,goods02_png,goods03_png,goods04_png,goods05_png,goods06_png,goods07_png,goodsTitle_png,heros01_png,heros02_png,heros03_png,heros04_png,heros05_png,heros06_png,heros07_png,herosTitle_png,hScrollBar01_png,hScrollBar02_png,listItemBkgd_png,commonBg_jpg,homeBg_jpg,loading_jpg",
+			"name": "preload"
+		},
+		{
+			"keys": "pic2,pic3,pic4,pic5",
+			"name": "heros"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/heros/pic2.png",
+			"type": "image",
+			"name": "pic2"
+		},
+		{
+			"url": "assets/heros/pic3.png",
+			"type": "image",
+			"name": "pic3"
+		},
+		{
+			"url": "assets/heros/pic4.png",
+			"type": "image",
+			"name": "pic4"
+		},
+		{
+			"url": "assets/heros/pic5.png",
+			"type": "image",
+			"name": "pic5"
+		},
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		},
+		{
+			"name": "pic2_png",
+			"type": "image",
+			"url": "assets/heros/pic2.png"
+		},
+		{
+			"name": "pic3_png",
+			"type": "image",
+			"url": "assets/heros/pic3.png"
+		},
+		{
+			"name": "pic4_png",
+			"type": "image",
+			"url": "assets/heros/pic4.png"
+		},
+		{
+			"name": "pic5_png",
+			"type": "image",
+			"url": "assets/heros/pic5.png"
+		},
+		{
+			"name": "about-bg_png",
+			"type": "image",
+			"url": "art/about/about-bg.png"
+		},
+		{
+			"name": "about_png",
+			"type": "image",
+			"url": "art/about/about.png"
+		},
+		{
+			"name": "close_png",
+			"type": "image",
+			"url": "art/about/close.png"
+		},
+		{
+			"name": "bgListPage_jpg",
+			"type": "image",
+			"url": "art/heros_goods/bgListPage.jpg"
+		},
+		{
+			"name": "btnOK_png",
+			"type": "image",
+			"url": "art/heros_goods/btnOK.png"
+		},
+		{
+			"name": "checked_png",
+			"type": "image",
+			"url": "art/heros_goods/checked.png"
+		},
+		{
+			"name": "checkNo_png",
+			"type": "image",
+			"url": "art/heros_goods/checkNo.png"
+		},
+		{
+			"name": "goods01_png",
+			"type": "image",
+			"url": "art/heros_goods/goods01.png"
+		},
+		{
+			"name": "goods02_png",
+			"type": "image",
+			"url": "art/heros_goods/goods02.png"
+		},
+		{
+			"name": "goods03_png",
+			"type": "image",
+			"url": "art/heros_goods/goods03.png"
+		},
+		{
+			"name": "goods04_png",
+			"type": "image",
+			"url": "art/heros_goods/goods04.png"
+		},
+		{
+			"name": "goods05_png",
+			"type": "image",
+			"url": "art/heros_goods/goods05.png"
+		},
+		{
+			"name": "goods06_png",
+			"type": "image",
+			"url": "art/heros_goods/goods06.png"
+		},
+		{
+			"name": "goods07_png",
+			"type": "image",
+			"url": "art/heros_goods/goods07.png"
+		},
+		{
+			"name": "goodsTitle_png",
+			"type": "image",
+			"url": "art/heros_goods/goodsTitle.png"
+		},
+		{
+			"name": "heros01_png",
+			"type": "image",
+			"url": "art/heros_goods/heros01.png"
+		},
+		{
+			"name": "heros02_png",
+			"type": "image",
+			"url": "art/heros_goods/heros02.png"
+		},
+		{
+			"name": "heros03_png",
+			"type": "image",
+			"url": "art/heros_goods/heros03.png"
+		},
+		{
+			"name": "heros04_png",
+			"type": "image",
+			"url": "art/heros_goods/heros04.png"
+		},
+		{
+			"name": "heros05_png",
+			"type": "image",
+			"url": "art/heros_goods/heros05.png"
+		},
+		{
+			"name": "heros06_png",
+			"type": "image",
+			"url": "art/heros_goods/heros06.png"
+		},
+		{
+			"name": "heros07_png",
+			"type": "image",
+			"url": "art/heros_goods/heros07.png"
+		},
+		{
+			"name": "herosTitle_png",
+			"type": "image",
+			"url": "art/heros_goods/herosTitle.png"
+		},
+		{
+			"name": "hScrollBar01_png",
+			"type": "image",
+			"url": "art/heros_goods/hScrollBar01.png"
+		},
+		{
+			"name": "hScrollBar02_png",
+			"type": "image",
+			"url": "art/heros_goods/hScrollBar02.png"
+		},
+		{
+			"name": "listItemBkgd_png",
+			"type": "image",
+			"url": "art/heros_goods/listItemBkgd.png"
+		},
+		{
+			"name": "commonBg_jpg",
+			"type": "image",
+			"url": "art/home/commonBg.jpg"
+		},
+		{
+			"name": "homeBg_jpg",
+			"type": "image",
+			"url": "art/home/homeBg.jpg"
+		},
+		{
+			"name": "loading_jpg",
+			"type": "image",
+			"url": "art/loading/loading.jpg"
+		}
+	]
+}

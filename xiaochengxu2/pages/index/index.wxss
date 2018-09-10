@@ -1,0 +1,6 @@
+/**index.wxss**/
+.a{
+  width:220rpx;
+  height:220rpx;
+  background: #fc1;
+}

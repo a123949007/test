@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script>
+        var _param = {};
+        var start_time = new Date();
+        function getData() {
+            _param['page'] = "smartlink.html";
+            _param['event'] = 'loaded';
+            _param['version'] = 'v2';
+            //获取页面加载时间
+            getLoadingTime(start_time,_param);
+            //判断是否在iframe
+            getIsIframe(_param);
+            //获取设备参数
+            getDeviceData(_param);
+            //获取url参数
+            getUrlData(_param);
+            //获取指纹
+            getFingerprint(_param);
+            //获取重力系数
+            getGravity(_param);
+        }
+          //获取页面加载时间
+        var getLoadingTime = function (start_time,_param) {
+            var loadingTime = "";
+            var end_time = new Date();
+            loadingTime = end_time.getTime() - start_time.getTime();
+            _param['loadingTime'] = loadingTime;
+        };
+
+        //判断是否在iframe
+        var getIsIframe = function (_param) { 
+            var isIframe = window.parent == window.self ? false : true;
+            _param['isIframe'] = isIframe;
+        };
+
+        //获取屏幕以及页面大小
+        var getDeviceData =function(_param) {
+            var deviceWidth = $(window).width();
+            var deviceHeight = $(window).height();
+            var webWidth = $(document).width();
+            var webHeight = $(document).height();
+            _param['deviceWidth'] = deviceWidth;
+            _param['deviceHeight'] = deviceHeight;
+            _param['webWidth'] = webWidth;
+            _param['webHeight'] = webHeight;
+        }
+
+        //获取url参数
+        var getUrlData = function (_param) {
+            var url = window.location.search;
+            if (url) {
+                var a = url.substring(1, url.length).split('&');
+                for (var i = 0; i < a.length; i++) {
+                    var key = a[i].split('=')[0];
+                    var value = a[i].split('=')[1];
+                    _param[key] = value;
+                }
+            }
+        };
+
+        //获取重力参数
+        var getGravity = function (_param) {
+            //获取重力感应参数
+            window.addEventListener("deviceorientation", handle, false);
+
+            //重力事件回调函数
+            function handle(event) {
+                _param['alpha'] = event.alpha;
+                _param['beta'] = event.beta;
+                _param['gamma'] = event.gamma;
+                setTimeout(function() {
+                    //后台请求地址
+                    sendData(_param,jump);
+                }, 0)
+                window.removeEventListener('deviceorientation', handle, false)
+            }
+        };
+
+        //获取指纹参数
+        var getFingerprint = function (_param){
+            new Fingerprint2().get(function(result, components){
+                _param['fingerprint'] = result;
+                for(var i = 0;i < components.length;i++){
+                    if(components[i].key == 'available_resolution'){
+                        for(var j =0;j<components[i].value.length;j++){
+                            _param[components[i].key+j] = components[i].value[j]
+                        }
+                    }else if(components[i].key == 'regular_plugins'){
+                        for(var j =0;j<components[i].value.length;j++){
+                            _param[components[i].key+j] = components[i].value[j]
+                        }
+                    }else if(components[i].key == 'resolution'){
+                        for(var j =0;j<components[i].value.length;j++){
+                            _param[components[i].key+j] = components[i].value[j]
+                        }
+                    }else if(components[i].key == 'touch_support'){
+                        for(var j =0;j<components[i].value.length;j++){
+                            _param[components[i].key+j] = components[i].value[j]
+                        }
+                    }else{
+                        _param[components[i].key] = components[i].value;
+                    }
+                    
+                } 
+                delete _param.canvas;
+                delete _param.webgl;
+                delete _param.js_fonts;
+                delete _param.user_agent;
+                delete _param.webgl_vendor;
+            });
+        }
+
+        //发送数据
+        var sendData = function (data,callback) {
+            var url = "https://adat.tinkermobi.com/davinci/meter?";
+            for (var i in data) {
+                url += i + '=' + data[i] + '&';
+            }
+            url = url.substr(0, url.length - 1).toString();
+            var parent = document.getElementById('sdj5aiof92g');
+            var img = document.createElement('img');
+            img.onerror = function() {
+                callback && callback(data);
+            }
+            img.onload = function() {
+                callback && callback(data);
+            }
+            img.src = url;
+            parent.appendChild(img);
+        }
+
+        //url跳转
+        var jump = function (_param) {
+            var url = "http://smart.woxoto.com/rtb/smartlink/BbnRHNznQmVOeoqlYR87hzLtuKhAOXbO?tfc_id=12&sc={sid}&pub_click_id={cid}";
+            if(_param.sid){
+                url = url.replace("{sid}",_param.sid);
+            };
+            if(_param.cid){
+                url = url.replace("{cid}",_param.cid);
+            };
+            window.location.replace(url);
+        }
+    </script>
+	<script src="./fingerpr2.js"></script>
+	<script src="./zepto.min.js"></script>
+    
+    <title></title>
+</head>
+
+<body onload="getData()">
+    <div id="sdj5aiof92g" style="display: none"></div>
+
+</body>
+</html>

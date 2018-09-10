@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/pageSwitch.min.css">
+</head>
+<body>
+	
+	 <!-- banner -->
+    <div class="banner">
+        <div id="container">
+            <div class="sections">
+                <div class="section" id="section0">
+                </div>
+                <div class="section" id="section1">
+                </div>
+                <div class="section" id="section2">
+                </div>
+            </div>
+        </div>
+    </div>
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script src="js/pageSwitch.min.js"></script>
+	<script>
+	$(function() {
+        //轮播配置
+        $("#container").PageSwitch({
+            direction: 'horizontal',
+            easing: 'ease-in',
+            duration: 1000,
+            // autoPlay: true,
+            // loop: false,
+            mousewheel: false,
+            canScroll: false
+                // freeze: false,
+                // DOMMouseScroll: false
+        });
+    });
+	</script>
+</body>
+</html>

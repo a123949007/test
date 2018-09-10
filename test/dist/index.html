@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/element-ui.css">
+    <link rel="stylesheet" href="/css/page.css">
+    <title>entry</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            background-color: #EEE;
+        }
+        #wrapper{
+            width: 1200px;
+            height: 100%;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <!-- 导航栏 -->
+    <div id="nav"></div>
+
+
+</div>
+
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="script/lib/sea.js" charset="utf-8"></script>
+<script src="script/lib/vue.js" charset="utf-8"></script>
+<script src="script/lib/vue-router.js" charset="utf-8"></script>
+<script src="script/lib/element-ui.js" charset="utf-8"></script>
+
+<script>
+    seajs.config({
+        paths: {
+            P: '/script/pages',
+            M: '/script/modules',
+            R: '/script/router'
+        }
+    });
+    seajs.use(['P/nav.js']);
+</script>
+
+
+</body>
+</html>

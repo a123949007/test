@@ -1,0 +1,14 @@
+<div>
+    <el-menu theme="dark" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+        <el-menu-item index="">
+            <router-link to="/home">HOME</router-link>
+        </el-menu-item>
+        <el-menu-item index="">
+            <router-link to="/page">PAGE</router-link>
+        </el-menu-item>
+        <el-menu-item index="">
+            <router-link to="/slide">SLIDE</router-link>
+        </el-menu-item>
+    </el-menu>
+    <router-view></router-view>
+</div>

@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view>
+    <navigator url="/pages/index/index" hover-class="navigator-hover">点击跳转到A页面 </navigator>
+</view>

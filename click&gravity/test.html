@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <script src="./zepto.min.js"></script>
+    <script src="./fastclick.js"></script>
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Disable certain interactions on touch devices */
+	body { -webkit-touch-callout: none; -webkit-text-size-adjust: none; -webkit-user-select: none; -webkit-highlight: none; -webkit-tap-highlight-color: rgba(0,0,0,0); }
+
+    .btn {
+        margin-top: 300px;
+        margin-left: 200px;
+        width: 200px;
+        height: 60px;
+    }
+    </style>
+    <script type="application/javascript">
+		window.addEventListener('load', function () {
+			FastClick.attach(document.body);
+		}, false);
+	</script> 
+</head>
+
+<body>
+    <button class="btn" onclick="getMousePos()">click</button>
+    <script>
+    // 摇一摇(使用DeviceMotion事件, 推荐,应为可以计算加速度)
+    if (window.DeviceMotionEvent) {
+        var speed = 0.3; // 用来判定的加速度阈值，太大了则很难触发
+        var x, y, z, lastX, lastY, lastZ;
+        x = y = z = lastX = lastY = lastZ = 0;
+
+        window.addEventListener('devicemotion', function(event) {
+            var acceleration = event.accelerationIncludingGravity;
+            x = acceleration.x;
+            y = acceleration.y;
+            z = acceleration.z;
+            if (Math.abs(x - lastX) > speed || Math.abs(y - lastY) > speed || Math.abs(z - lastZ) > speed) {
+                // 用户设备摇动了，触发响应操作
+                // 此处的判断依据是用户设备的加速度大于我们设置的阈值
+                alert(x);
+                alert(y);
+                alert(z);
+            }
+            lastX = x;
+            lastY = y;
+            lastZ = z;
+        }, false);
+    }
+
+    function getMousePos(event) {
+        var e = event || window.event;
+        var scrollX = document.documentElement.scrollLeft || document.body.scrollLeft;
+        var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
+        var x = e.pageX || e.clientX + scrollX;
+        var y = e.pageY || e.clientY + scrollY;
+        // return { 'X': x, 'Y': y };
+        alert("X:" + x);
+        alert("Y:" + y);
+    }
+    </script>
+</body>
+
+</html>
